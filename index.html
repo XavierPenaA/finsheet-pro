@@ -284,6 +284,13 @@
       color: var(--muted); font-size: 0.85rem;
     }
 
+    .lang-btn {
+      background: rgba(255,255,255,0.06); color: var(--text);
+      border: 1px solid var(--border-strong); padding: 6px 12px; border-radius: 8px;
+      font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.15s;
+    }
+    .lang-btn:hover { border-color: var(--emerald); background: rgba(16,185,129,0.12); }
+
     @media (max-width: 900px) {
       .calc-card, .grid-3, .grid-2, .faq-grid { grid-template-columns: 1fr; }
       .bundle-cta { text-align: left; }
@@ -300,10 +307,11 @@
         <span>FinSheet Pro</span>
       </a>
       <nav>
-        <a href="#calculator" class="hide-sm">Free 50/30/20 Calculator</a>
-        <a href="#templates" class="hide-sm">Templates</a>
-        <a href="#faq" class="hide-sm">FAQ</a>
-        <a href="#bundle" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.84rem;">Get All 3 (Save 30%)</a>
+        <a href="#calculator" class="hide-sm" data-i18n="nav_calc">Free 50/30/20 Calculator</a>
+        <a href="#templates" class="hide-sm" data-i18n="nav_tpl">Templates</a>
+        <a href="#faq" class="hide-sm" data-i18n="nav_faq">FAQ</a>
+        <button id="lang-toggle" class="lang-btn" type="button" title="Cambiar idioma / Switch language">🇪🇸 ES</button>
+        <a href="#bundle" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.84rem;" data-i18n="nav_bundle">Get All 3 (Save 30%)</a>
       </nav>
     </div>
   </header>
@@ -312,18 +320,18 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <div class="pill">Excel &amp; Google Sheets • English + Spanish Editions Included</div>
-        <h1>Stop Paying Monthly Subscriptions Just to Track Your Money.</h1>
-        <p>Automated spreadsheets built for real personal budgets, paycheck-to-paycheck monthly tabs, and small business Profit &amp; Loss—pay once, own forever.</p>
+        <div class="pill" data-i18n="hero_pill">Excel &amp; Google Sheets • English + Spanish Editions Included</div>
+        <h1 data-i18n="hero_h1">Stop Paying Monthly Subscriptions Just to Track Your Money.</h1>
+        <p data-i18n="hero_p">Automated spreadsheets built for real personal budgets, paycheck-to-paycheck monthly tabs, and small business Profit &amp; Loss—pay once, own forever.</p>
         <div class="hero-actions">
-          <a href="#templates" class="btn btn-primary">Explore All Automated Templates</a>
-          <a href="#calculator" class="btn btn-outline">Try Free Budget Calculator ↓</a>
+          <a href="#templates" class="btn btn-primary" data-i18n="hero_btn1">Explore All Automated Templates</a>
+          <a href="#calculator" class="btn btn-outline" data-i18n="hero_btn2">Try Free Budget Calculator ↓</a>
         </div>
         <div class="trust-bar">
-          <span>✔ <strong>Instant .ZIP Download</strong> (EN + ES)</span>
-          <span>✔ <strong>Zero Macros</strong> — Works in Excel &amp; Google Sheets</span>
-          <span>✔ <strong>Live Native Charts</strong> &amp; Dropdown Menus</span>
-          <span>✔ <strong>Multi-Currency Ready</strong> ($, €, £)</span>
+          <span data-i18n-html="tb_1">✔ <strong>Instant .ZIP Download</strong> (EN + ES)</span>
+          <span data-i18n-html="tb_2">✔ <strong>Zero Macros</strong> — Works in Excel &amp; Google Sheets</span>
+          <span data-i18n-html="tb_3">✔ <strong>Live Native Charts</strong> &amp; Dropdown Menus</span>
+          <span data-i18n-html="tb_4">✔ <strong>Multi-Currency Ready</strong> ($, €, £)</span>
         </div>
       </div>
     </section>
@@ -332,54 +340,54 @@
     <section id="calculator">
       <div class="container">
         <div class="sec-head">
-          <h2>Free 50/30/20 Budget &amp; Savings Goal Calculator</h2>
-          <p>Test your monthly cash allocation right here before picking your automated spreadsheet.</p>
+          <h2 data-i18n="calc_h2">Free 50/30/20 Budget &amp; Savings Goal Calculator</h2>
+          <p data-i18n="calc_p">Test your monthly cash allocation right here before picking your automated spreadsheet.</p>
         </div>
         <div class="calc-card">
           <div>
             <div class="input-group">
-              <label for="calc-income">Monthly After-Tax Income ($)</label>
+              <label for="calc-income" data-i18n="lbl_inc">Monthly After-Tax Income ($)</label>
               <input type="number" id="calc-income" value="3200" min="0" step="50" />
             </div>
             <div class="input-group">
-              <label for="calc-needs-pct">Needs Allocation (%) — Housing, Food, Bills</label>
+              <label for="calc-needs-pct" data-i18n="lbl_needs">Needs Allocation (%) — Housing, Food, Bills</label>
               <input type="number" id="calc-needs-pct" value="50" min="0" max="100" />
             </div>
             <div class="input-group">
-              <label for="calc-wants-pct">Wants Allocation (%) — Dining, Trips, Gear</label>
+              <label for="calc-wants-pct" data-i18n="lbl_wants">Wants Allocation (%) — Dining, Trips, Gear</label>
               <input type="number" id="calc-wants-pct" value="30" min="0" max="100" />
             </div>
             <div class="input-group">
-              <label for="calc-goal">Target Savings Goal ($)</label>
+              <label for="calc-goal" data-i18n="lbl_goal">Target Savings Goal ($)</label>
               <input type="number" id="calc-goal" value="1000" min="0" step="50" />
             </div>
-            <button id="btn-export-csv" class="btn btn-outline" style="width: 100%; margin-top: 6px;">Download Summary (.CSV)</button>
+            <button id="btn-export-csv" class="btn btn-outline" style="width: 100%; margin-top: 6px;" data-i18n="btn_csv">Download Summary (.CSV)</button>
           </div>
 
           <div class="calc-results">
             <div class="kpi-box">
-              <div class="k-lbl">Needs Budget</div>
+              <div class="k-lbl" data-i18n="kpi_needs">Needs Budget</div>
               <div class="k-val tabular" id="out-needs" style="color: #60a5fa;">$1,600.00</div>
               <div class="k-sub" id="sub-needs">50% of income</div>
             </div>
             <div class="kpi-box">
-              <div class="k-lbl">Wants Budget</div>
+              <div class="k-lbl" data-i18n="kpi_wants">Wants Budget</div>
               <div class="k-val tabular" id="out-wants" style="color: #c084fc;">$960.00</div>
               <div class="k-sub" id="sub-wants">30% of income</div>
             </div>
             <div class="kpi-box">
-              <div class="k-lbl">Monthly Savings</div>
+              <div class="k-lbl" data-i18n="kpi_save">Monthly Savings</div>
               <div class="k-val tabular" id="out-save" style="color: #34d399;">$640.00</div>
               <div class="k-sub" id="sub-save">20% saved every month</div>
             </div>
             <div class="kpi-box">
-              <div class="k-lbl">Time to Reach Goal</div>
+              <div class="k-lbl" data-i18n="kpi_time">Time to Reach Goal</div>
               <div class="k-val tabular" id="out-months" style="color: #fbbf24;">1.6 mos</div>
               <div class="k-sub" id="sub-goal">To save $1,000.00</div>
             </div>
             <div class="bar-wrap">
               <div style="display:flex; justify-content:space-between; font-size:0.84rem; font-weight:600;">
-                <span>Allocation Split</span>
+                <span data-i18n="split_lbl">Allocation Split</span>
                 <span id="out-split-label" class="tabular">50% / 30% / 20%</span>
               </div>
               <div class="stacked-bar">
@@ -387,7 +395,7 @@
                 <div class="seg-wants" id="bar-wants" style="width:30%"></div>
                 <div class="seg-save" id="bar-save" style="width:20%"></div>
               </div>
-              <p style="font-size:0.82rem; color: var(--muted);">Want automatic expense logging, charts, debt snowball &amp; bill reminders across 12 months? Grab a template below.</p>
+              <p style="font-size:0.82rem; color: var(--muted);" data-i18n="calc_note">Want automatic expense logging, charts, debt snowball &amp; bill reminders across 12 months? Grab a template below.</p>
             </div>
           </div>
         </div>
@@ -398,8 +406,8 @@
     <section id="templates">
       <div class="container">
         <div class="sec-head">
-          <h2>Choose Your Automated Excel &amp; Google Sheets System</h2>
-          <p>Every purchase includes both <strong>English &amp; Spanish (.XLSX)</strong> workbooks with Q1 sample data so you can explore every chart immediately.</p>
+          <h2 data-i18n="tpl_h2">Choose Your Automated Excel &amp; Google Sheets System</h2>
+          <p data-i18n-html="tpl_p">Every purchase includes both <strong>English &amp; Spanish (.XLSX)</strong> workbooks with Q1 sample data so you can explore every chart immediately.</p>
         </div>
 
         <div class="grid-3">
@@ -407,18 +415,18 @@
           <article class="product-card">
             <img src="assets/prod1_dashboard.jpg" alt="Personal Finance & Budget Dashboard Pro preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#34d399;">Personal All-in-One • 5 Tabs</div>
-              <h3 class="p-title">Personal Finance &amp; Budget Dashboard Pro</h3>
-              <p class="p-desc">Interactive monthly period filter, 1,500+ transaction rows, savings goals, debt snowball &amp; subscriptions audit.</p>
+              <div class="p-tag" style="color:#34d399;" data-i18n="p1_tag">Personal All-in-One • 5 Tabs</div>
+              <h3 class="p-title" data-i18n="p1_title">Personal Finance &amp; Budget Dashboard Pro</h3>
+              <p class="p-desc" data-i18n="p1_desc">Interactive monthly period filter, 1,500+ transaction rows, savings goals, debt snowball &amp; subscriptions audit.</p>
               <ul class="p-list">
-                <li>Switch between All Year or any month</li>
-                <li>3 native Excel charts + data progress bars</li>
-                <li>1,500 transaction rows with smart dropdowns</li>
-                <li>Debt Snowball &amp; Recurring Bills tabs included</li>
+                <li data-i18n="p1_l1">Switch between All Year or any month</li>
+                <li data-i18n="p1_l2">3 native Excel charts + data progress bars</li>
+                <li data-i18n="p1_l3">1,500 transaction rows with smart dropdowns</li>
+                <li data-i18n="p1_l4">Debt Snowball &amp; Recurring Bills tabs included</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$9.99 <small>USD</small></div>
-                <a id="link-prod1" href="https://xavisebas.gumroad.com/l/arljnz" target="_blank" rel="noopener" class="btn btn-primary">Buy on Gumroad</a>
+                <a id="link-prod1" href="https://xavisebas.gumroad.com/l/arljnz" target="_blank" rel="noopener" class="btn btn-primary t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -427,18 +435,18 @@
           <article class="product-card">
             <img src="assets/prod2_monthly.jpg" alt="12-Month Paycheck & Monthly Budget Planner preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#2dd4bf;">Dedicated Monthly Tabs • 14 Tabs</div>
-              <h3 class="p-title">12-Month Paycheck &amp; Monthly Budget Planner</h3>
-              <p class="p-desc">Prefer one clean tab per month (JAN–DEC)? Track paychecks, check off fixed bills, and sync an Annual Summary automatically.</p>
+              <div class="p-tag" style="color:#2dd4bf;" data-i18n="p2_tag">Dedicated Monthly Tabs • 14 Tabs</div>
+              <h3 class="p-title" data-i18n="p2_title">12-Month Paycheck &amp; Monthly Budget Planner</h3>
+              <p class="p-desc" data-i18n="p2_desc">Prefer one clean tab per month (JAN–DEC)? Track paychecks, check off fixed bills, and sync an Annual Summary automatically.</p>
               <ul class="p-list">
-                <li>12 dedicated monthly tabs (JAN through DEC)</li>
-                <li>Auto-linked Annual Summary + 2 year charts</li>
-                <li>Fixed Bills checklist (Paid / Pending)</li>
-                <li>Up to 250 dropdown rows + chart per month</li>
+                <li data-i18n="p2_l1">12 dedicated monthly tabs (JAN through DEC)</li>
+                <li data-i18n="p2_l2">Auto-linked Annual Summary + 2 year charts</li>
+                <li data-i18n="p2_l3">Fixed Bills checklist (Paid / Pending)</li>
+                <li data-i18n="p2_l4">Up to 250 dropdown rows + chart per month</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$11.99 <small>USD</small></div>
-                <a id="link-prod2" href="https://xavisebas.gumroad.com/l/vzdcix" target="_blank" rel="noopener" class="btn btn-teal">Buy on Gumroad</a>
+                <a id="link-prod2" href="https://xavisebas.gumroad.com/l/vzdcix" target="_blank" rel="noopener" class="btn btn-teal t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -447,18 +455,18 @@
           <article class="product-card">
             <img src="assets/prod3_business.jpg" alt="Small Business & Freelancer Profit Tracker P&L preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#818cf8;">Business &amp; Freelance • 5 Tabs</div>
-              <h3 class="p-title">Small Business &amp; Freelancer Profit Tracker (P&amp;L)</h3>
-              <p class="p-desc">Real monthly P&amp;L, Stripe/PayPal fees, tax-deductible costs, unpaid client invoices &amp; Q1–Q4 tax reserve.</p>
+              <div class="p-tag" style="color:#818cf8;" data-i18n="p3_tag">Business &amp; Freelance • 5 Tabs</div>
+              <h3 class="p-title" data-i18n="p3_title">Small Business &amp; Freelancer Profit Tracker (P&amp;L)</h3>
+              <p class="p-desc" data-i18n="p3_desc">Real monthly P&amp;L, Stripe/PayPal fees, tax-deductible costs, unpaid client invoices &amp; Q1–Q4 tax reserve.</p>
               <ul class="p-list">
-                <li>12-month P&amp;L with Revenue, Profit &amp; Margin %</li>
-                <li>Client ledger flagging Paid / Pending / Overdue</li>
-                <li>1,500 sales + 1,500 deductible expense rows</li>
-                <li>Automated Q1–Q4 quarterly tax reserve</li>
+                <li data-i18n="p3_l1">12-month P&amp;L with Revenue, Profit &amp; Margin %</li>
+                <li data-i18n="p3_l2">Client ledger flagging Paid / Pending / Overdue</li>
+                <li data-i18n="p3_l3">1,500 sales + 1,500 deductible expense rows</li>
+                <li data-i18n="p3_l4">Automated Q1–Q4 quarterly tax reserve</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$14.99 <small>USD</small></div>
-                <a id="link-prod3" href="https://xavisebas.gumroad.com/l/nenda" target="_blank" rel="noopener" class="btn btn-indigo">Buy on Gumroad</a>
+                <a id="link-prod3" href="https://xavisebas.gumroad.com/l/nenda" target="_blank" rel="noopener" class="btn btn-indigo t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -467,15 +475,15 @@
         <!-- MEGA BUNDLE -->
         <div id="bundle" class="bundle-box">
           <div style="flex: 1 1 380px;">
-            <span class="bundle-badge">BEST VALUE — SAVE OVER 30%</span>
-            <h3>All-in-One Personal &amp; Business Finance Mega Bundle</h3>
-            <p>Get all 3 complete systems above (6 workbooks total: English + Spanish editions) in one instant download. Pay once, organize both your personal budget and business bookkeeping forever.</p>
+            <span class="bundle-badge" data-i18n="bnd_badge">BEST VALUE — SAVE OVER 30%</span>
+            <h3 data-i18n="bnd_title">All-in-One Personal &amp; Business Finance Mega Bundle</h3>
+            <p data-i18n="bnd_desc">Get all 3 complete systems above (6 workbooks total: English + Spanish editions) in one instant download. Pay once, organize both your personal budget and business bookkeeping forever.</p>
             <div style="display:flex; align-items:center; gap:18px; margin-top:20px; flex-wrap:wrap;">
               <div>
                 <span class="strike tabular">$36.97</span>
                 <span class="price tabular" style="color:#fcd34d; font-size:1.95rem;">$24.99 <small>USD</small></span>
               </div>
-              <a id="link-bundle" href="https://xavisebas.gumroad.com/l/twzthg" target="_blank" rel="noopener" class="btn btn-amber">Get Complete Bundle →</a>
+              <a id="link-bundle" href="https://xavisebas.gumroad.com/l/twzthg" target="_blank" rel="noopener" class="btn btn-amber" data-i18n="bnd_btn">Get Complete Bundle →</a>
             </div>
           </div>
           <div style="flex: 1 1 340px; max-width: 460px;">
@@ -485,8 +493,8 @@
 
         <!-- SPECIALIZED INDUSTRY & STUDENT TEMPLATES (#5-#8) -->
         <div class="sec-head" style="margin-top: 64px; margin-bottom: 32px;">
-          <h2>Specialized Niche, Side-Hustle &amp; Student Trackers</h2>
-          <p>Purpose-built spreadsheets tailored for e-commerce sellers, content creators, Airbnb landlords &amp; university students.</p>
+          <h2 data-i18n="niche_h2">Specialized Niche, Side-Hustle &amp; Student Trackers</h2>
+          <p data-i18n="niche_p">Purpose-built spreadsheets tailored for e-commerce sellers, content creators, Airbnb landlords &amp; university students.</p>
         </div>
 
         <div class="grid-2">
@@ -494,17 +502,17 @@
           <article class="product-card">
             <img src="assets/prod5_ecommerce.jpg" alt="E-Commerce & Reseller Profit + Inventory Tracker preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#60a5fa;">E-Commerce &amp; Resellers • 4 Tabs</div>
-              <h3 class="p-title">E-Commerce &amp; Reseller Profit + Inventory Tracker</h3>
-              <p class="p-desc">Pick a SKU in the orders log and Unit COGS calculates automatically via INDEX/MATCH—compare profit margins across Shopify, Amazon, Etsy &amp; eBay.</p>
+              <div class="p-tag" style="color:#60a5fa;" data-i18n="p5_tag">E-Commerce &amp; Resellers • 4 Tabs</div>
+              <h3 class="p-title" data-i18n="p5_title">E-Commerce &amp; Reseller Profit + Inventory Tracker</h3>
+              <p class="p-desc" data-i18n="p5_desc">Pick a SKU in the orders log and Unit COGS calculates automatically via INDEX/MATCH—compare profit margins across Shopify, Amazon, Etsy &amp; eBay.</p>
               <ul class="p-list">
-                <li>Up to 400 SKUs with automatic Reorder / Low-Stock alerts</li>
-                <li>1,500-order log deducting shipping &amp; platform fees cleanly</li>
-                <li>Channel comparison &amp; 12-month performance bar charts</li>
+                <li data-i18n="p5_l1">Up to 400 SKUs with automatic Reorder / Low-Stock alerts</li>
+                <li data-i18n="p5_l2">1,500-order log deducting shipping &amp; platform fees cleanly</li>
+                <li data-i18n="p5_l3">Channel comparison &amp; 12-month performance bar charts</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$14.99 <small>USD</small></div>
-                <a id="link-prod5" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-blue">Buy on Gumroad</a>
+                <a id="link-prod5" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-blue t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -513,17 +521,17 @@
           <article class="product-card">
             <img src="assets/prod6_creators.jpg" alt="Content Creator & Streamer Income + Sponsorship Tracker preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#a78bfa;">YouTubers, Streamers &amp; UGC • 4 Tabs</div>
-              <h3 class="p-title">Content Creator &amp; Streamer Income + Sponsorship Tracker</h3>
-              <p class="p-desc">Unify AdSense, Twitch Subs, affiliate links &amp; your Brand Deal CRM pipeline (Pitching through Paid) while tagging cameras &amp; SaaS as tax deductible.</p>
+              <div class="p-tag" style="color:#a78bfa;" data-i18n="p6_tag">YouTubers, Streamers &amp; UGC • 4 Tabs</div>
+              <h3 class="p-title" data-i18n="p6_title">Content Creator &amp; Streamer Income + Sponsorship Tracker</h3>
+              <p class="p-desc" data-i18n="p6_desc">Unify AdSense, Twitch Subs, affiliate links &amp; your Brand Deal CRM pipeline (Pitching through Paid) while tagging cameras &amp; SaaS as tax deductible.</p>
               <ul class="p-list">
-                <li>Brand Sponsorship pipeline tracking deliverables &amp; due dates</li>
-                <li>Quarterly estimated tax reserve &amp; post-tax creator profit</li>
-                <li>1,000-row payouts &amp; deductible studio gear ledger</li>
+                <li data-i18n="p6_l1">Brand Sponsorship pipeline tracking deliverables &amp; due dates</li>
+                <li data-i18n="p6_l2">Quarterly estimated tax reserve &amp; post-tax creator profit</li>
+                <li data-i18n="p6_l3">1,000-row payouts &amp; deductible studio gear ledger</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$12.99 <small>USD</small></div>
-                <a id="link-prod6" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-violet">Buy on Gumroad</a>
+                <a id="link-prod6" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-violet t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -532,17 +540,17 @@
           <article class="product-card">
             <img src="assets/prod7_realestate.jpg" alt="Real Estate, Rental & Airbnb Cash Flow Tracker preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#2dd4bf;">Landlords &amp; Airbnb Hosts • 4 Tabs</div>
-              <h3 class="p-title">Real Estate, Rental &amp; Airbnb Cash Flow Tracker</h3>
-              <p class="p-desc">Manage up to 10 short-term Airbnb listings or long-term residential leases side by side—auto-deduct platform fees and monitor annual NOI.</p>
+              <div class="p-tag" style="color:#2dd4bf;" data-i18n="p7_tag">Landlords &amp; Airbnb Hosts • 4 Tabs</div>
+              <h3 class="p-title" data-i18n="p7_title">Real Estate, Rental &amp; Airbnb Cash Flow Tracker</h3>
+              <p class="p-desc" data-i18n="p7_desc">Manage up to 10 short-term Airbnb listings or long-term residential leases side by side—auto-deduct platform fees and monitor annual NOI.</p>
               <ul class="p-list">
-                <li>Unit-by-unit cash flow, booked nights &amp; net margin comparison</li>
-                <li>1,000 rent &amp; stay entries + 1,000 deductible property expenses</li>
-                <li>12-month NOI trend chart &amp; expense category breakdown</li>
+                <li data-i18n="p7_l1">Unit-by-unit cash flow, booked nights &amp; net margin comparison</li>
+                <li data-i18n="p7_l2">1,000 rent &amp; stay entries + 1,000 deductible property expenses</li>
+                <li data-i18n="p7_l3">12-month NOI trend chart &amp; expense category breakdown</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$16.99 <small>USD</small></div>
-                <a id="link-prod7" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-teal">Buy on Gumroad</a>
+                <a id="link-prod7" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-teal t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -551,17 +559,17 @@
           <article class="product-card">
             <img src="assets/prod8_student.jpg" alt="University Student GPA, Exam & Semester Budget Planner preview" />
             <div class="p-body">
-              <div class="p-tag" style="color:#818cf8;">University &amp; College • 4 Tabs</div>
-              <h3 class="p-title">University Student GPA, Exam &amp; Semester Budget Planner</h3>
-              <p class="p-desc">Credit-weighted 4.0 GPA tracker, syllabus percentage grading, automatic Days-Left exam countdowns &amp; college semester spending control.</p>
+              <div class="p-tag" style="color:#818cf8;" data-i18n="p8_tag">University &amp; College • 4 Tabs</div>
+              <h3 class="p-title" data-i18n="p8_title">University Student GPA, Exam &amp; Semester Budget Planner</h3>
+              <p class="p-desc" data-i18n="p8_desc">Credit-weighted 4.0 GPA tracker, syllabus percentage grading, automatic Days-Left exam countdowns &amp; college semester spending control.</p>
               <ul class="p-list">
-                <li>Up to 10 courses comparing Current Grade % vs. Target %</li>
-                <li>Urgent (&lt;= 7 days) deadline alert + 600-row assignment log</li>
-                <li>500-row student budget separating Essentials vs. Wants</li>
+                <li data-i18n="p8_l1">Up to 10 courses comparing Current Grade % vs. Target %</li>
+                <li data-i18n="p8_l2">Urgent (&lt;= 7 days) deadline alert + 600-row assignment log</li>
+                <li data-i18n="p8_l3">500-row student budget separating Essentials vs. Wants</li>
               </ul>
               <div class="p-footer">
                 <div class="price tabular">$9.99 <small>USD</small></div>
-                <a id="link-prod8" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-indigo">Buy on Gumroad</a>
+                <a id="link-prod8" href="https://xavisebas.gumroad.com/" target="_blank" rel="noopener" class="btn btn-indigo t-buy">Buy on Gumroad</a>
               </div>
             </div>
           </article>
@@ -573,24 +581,24 @@
     <section id="faq">
       <div class="container">
         <div class="sec-head">
-          <h2>Frequently Asked Questions</h2>
+          <h2 data-i18n="faq_h2">Frequently Asked Questions</h2>
         </div>
         <div class="faq-grid">
           <div class="faq-item">
-            <h4>Does this work in Google Sheets AND Microsoft Excel?</h4>
-            <p>Yes. All formulas (<code>SUMIFS</code>, <code>INDEX/MATCH</code>, <code>COUNTIF</code>) use universal syntax with zero VBA macros. Open directly in Excel or upload to Google Drive &gt; Open with Google Sheets.</p>
+            <h4 data-i18n="faq_q1">Does this work in Google Sheets AND Microsoft Excel?</h4>
+            <p data-i18n-html="faq_a1">Yes. All formulas (<code>SUMIFS</code>, <code>INDEX/MATCH</code>, <code>COUNTIF</code>) use universal syntax with zero VBA macros. Open directly in Excel or upload to Google Drive &gt; Open with Google Sheets.</p>
           </div>
           <div class="faq-item">
-            <h4>Can I change '$' to Euros (€), Pounds (£) or another currency?</h4>
-            <p>Yes, in 5 seconds. Select the currency columns and use Format &gt; Number &gt; Currency (Google Sheets) or Ctrl+1 (Microsoft Excel).</p>
+            <h4 data-i18n="faq_q2">Can I change '$' to Euros (€), Pounds (£) or another currency?</h4>
+            <p data-i18n="faq_a2">Yes, in 5 seconds. Select the currency columns and use Format &gt; Number &gt; Currency (Google Sheets) or Ctrl+1 (Microsoft Excel).</p>
           </div>
           <div class="faq-item">
-            <h4>Are both English and Spanish versions included?</h4>
-            <p>Yes! Every .ZIP download contains standalone English and Spanish workbooks so you can use whichever language you prefer.</p>
+            <h4 data-i18n="faq_q3">Are both English and Spanish versions included?</h4>
+            <p data-i18n="faq_a3">Yes! Every .ZIP download contains standalone English and Spanish workbooks so you can use whichever language you prefer.</p>
           </div>
           <div class="faq-item">
-            <h4>How do I clear the sample transactions?</h4>
-            <p>Simply select and delete the sample input rows in the log tabs (leaving formula columns like Auto-Month or Net ($) untouched) and start entering your own numbers.</p>
+            <h4 data-i18n="faq_q4">How do I clear the sample transactions?</h4>
+            <p data-i18n="faq_a4">Simply select and delete the sample input rows in the log tabs (leaving formula columns like Auto-Month or Net ($) untouched) and start entering your own numbers.</p>
           </div>
         </div>
       </div>
@@ -599,20 +607,16 @@
 
   <footer>
     <div class="container">
-      <p>FinSheet Pro — Automated Excel &amp; Google Sheets Templates • Instant Digital Delivery via Gumroad</p>
+      <p data-i18n="footer_txt">FinSheet Pro — Automated Excel &amp; Google Sheets Templates • Instant Digital Delivery via Gumroad</p>
     </div>
   </footer>
 
   <script>
-    // =========================================================================
-    // PEGA AQUÍ TUS 4 ENLACES REALES DE GUMROAD CUANDO LOS PUBLIQUES:
-    // =========================================================================
     const GUMROAD_LINKS = {
       prod1: "https://xavisebas.gumroad.com/l/arljnz",
       prod2: "https://xavisebas.gumroad.com/l/vzdcix",
       prod3: "https://xavisebas.gumroad.com/l/nenda",
       bundle: "https://xavisebas.gumroad.com/l/twzthg",
-      // Pega los enlaces /l/... específicos de Productos #5-#8 apenas los subas a Gumroad:
       prod5: "https://xavisebas.gumroad.com/",
       prod6: "https://xavisebas.gumroad.com/",
       prod7: "https://xavisebas.gumroad.com/",
@@ -624,17 +628,222 @@
       if (el) el.href = GUMROAD_LINKS[k];
     });
 
-    // Calculadora Interactiva 50/30/20
+    const I18N = {
+      en: {
+        nav_calc: "Free 50/30/20 Calculator",
+        nav_tpl: "Templates",
+        nav_faq: "FAQ",
+        nav_bundle: "Get All 3 (Save 30%)",
+        hero_pill: "Excel & Google Sheets • English + Spanish Editions Included",
+        hero_h1: "Stop Paying Monthly Subscriptions Just to Track Your Money.",
+        hero_p: "Automated spreadsheets built for real personal budgets, paycheck-to-paycheck monthly tabs, and small business Profit & Loss—pay once, own forever.",
+        hero_btn1: "Explore All Automated Templates",
+        hero_btn2: "Try Free Budget Calculator ↓",
+        tb_1: "✔ <strong>Instant .ZIP Download</strong> (EN + ES)",
+        tb_2: "✔ <strong>Zero Macros</strong> — Works in Excel &amp; Google Sheets",
+        tb_3: "✔ <strong>Live Native Charts</strong> &amp; Dropdown Menus",
+        tb_4: "✔ <strong>Multi-Currency Ready</strong> ($, €, £)",
+        calc_h2: "Free 50/30/20 Budget & Savings Goal Calculator",
+        calc_p: "Test your monthly cash allocation right here before picking your automated spreadsheet.",
+        lbl_inc: "Monthly After-Tax Income ($)",
+        lbl_needs: "Needs Allocation (%) — Housing, Food, Bills",
+        lbl_wants: "Wants Allocation (%) — Dining, Trips, Gear",
+        lbl_goal: "Target Savings Goal ($)",
+        btn_csv: "Download Summary (.CSV)",
+        kpi_needs: "Needs Budget",
+        kpi_wants: "Wants Budget",
+        kpi_save: "Monthly Savings",
+        kpi_time: "Time to Reach Goal",
+        split_lbl: "Allocation Split",
+        calc_note: "Want automatic expense logging, charts, debt snowball & bill reminders across 12 months? Grab a template below.",
+        tpl_h2: "Choose Your Automated Excel & Google Sheets System",
+        tpl_p: "Every purchase includes both <strong>English &amp; Spanish (.XLSX)</strong> workbooks with Q1 sample data so you can explore every chart immediately.",
+        buy_btn: "Buy on Gumroad",
+        p1_tag: "Personal All-in-One • 5 Tabs",
+        p1_title: "Personal Finance & Budget Dashboard Pro",
+        p1_desc: "Interactive monthly period filter, 1,500+ transaction rows, savings goals, debt snowball & subscriptions audit.",
+        p1_l1: "Switch between All Year or any month",
+        p1_l2: "3 native Excel charts + data progress bars",
+        p1_l3: "1,500 transaction rows with smart dropdowns",
+        p1_l4: "Debt Snowball & Recurring Bills tabs included",
+        p2_tag: "Dedicated Monthly Tabs • 14 Tabs",
+        p2_title: "12-Month Paycheck & Monthly Budget Planner",
+        p2_desc: "Prefer one clean tab per month (JAN–DEC)? Track paychecks, check off fixed bills, and sync an Annual Summary automatically.",
+        p2_l1: "12 dedicated monthly tabs (JAN through DEC)",
+        p2_l2: "Auto-linked Annual Summary + 2 year charts",
+        p2_l3: "Fixed Bills checklist (Paid / Pending)",
+        p2_l4: "Up to 250 dropdown rows + chart per month",
+        p3_tag: "Business & Freelance • 5 Tabs",
+        p3_title: "Small Business & Freelancer Profit Tracker (P&L)",
+        p3_desc: "Real monthly P&L, Stripe/PayPal fees, tax-deductible costs, unpaid client invoices & Q1–Q4 tax reserve.",
+        p3_l1: "12-month P&L with Revenue, Profit & Margin %",
+        p3_l2: "Client ledger flagging Paid / Pending / Overdue",
+        p3_l3: "1,500 sales + 1,500 deductible expense rows",
+        p3_l4: "Automated Q1–Q4 quarterly tax reserve",
+        bnd_badge: "BEST VALUE — SAVE OVER 30%",
+        bnd_title: "All-in-One Personal & Business Finance Mega Bundle",
+        bnd_desc: "Get all 3 complete systems above (6 workbooks total: English + Spanish editions) in one instant download. Pay once, organize both your personal budget and business bookkeeping forever.",
+        bnd_btn: "Get Complete Bundle →",
+        niche_h2: "Specialized Niche, Side-Hustle & Student Trackers",
+        niche_p: "Purpose-built spreadsheets tailored for e-commerce sellers, content creators, Airbnb landlords & university students.",
+        p5_tag: "E-Commerce & Resellers • 4 Tabs",
+        p5_title: "E-Commerce & Reseller Profit + Inventory Tracker",
+        p5_desc: "Pick a SKU in the orders log and Unit COGS calculates automatically via INDEX/MATCH—compare profit margins across Shopify, Amazon, Etsy & eBay.",
+        p5_l1: "Up to 400 SKUs with automatic Reorder / Low-Stock alerts",
+        p5_l2: "1,500-order log deducting shipping & platform fees cleanly",
+        p5_l3: "Channel comparison & 12-month performance bar charts",
+        p6_tag: "YouTubers, Streamers & UGC • 4 Tabs",
+        p6_title: "Content Creator & Streamer Income + Sponsorship Tracker",
+        p6_desc: "Unify AdSense, Twitch Subs, affiliate links & your Brand Deal CRM pipeline (Pitching through Paid) while tagging cameras & SaaS as tax deductible.",
+        p6_l1: "Brand Sponsorship pipeline tracking deliverables & due dates",
+        p6_l2: "Quarterly estimated tax reserve & post-tax creator profit",
+        p6_l3: "1,000-row payouts & deductible studio gear ledger",
+        p7_tag: "Landlords & Airbnb Hosts • 4 Tabs",
+        p7_title: "Real Estate, Rental & Airbnb Cash Flow Tracker",
+        p7_desc: "Manage up to 10 short-term Airbnb listings or long-term residential leases side by side—auto-deduct platform fees and monitor annual NOI.",
+        p7_l1: "Unit-by-unit cash flow, booked nights & net margin comparison",
+        p7_l2: "1,000 rent & stay entries + 1,000 deductible property expenses",
+        p7_l3: "12-month NOI trend chart & expense category breakdown",
+        p8_tag: "University & College • 4 Tabs",
+        p8_title: "University Student GPA, Exam & Semester Budget Planner",
+        p8_desc: "Credit-weighted 4.0 GPA tracker, syllabus percentage grading, automatic Days-Left exam countdowns & college semester spending control.",
+        p8_l1: "Up to 10 courses comparing Current Grade % vs. Target %",
+        p8_l2: "Urgent (<= 7 days) deadline alert + 600-row assignment log",
+        p8_l3: "500-row student budget separating Essentials vs. Wants",
+        faq_h2: "Frequently Asked Questions",
+        faq_q1: "Does this work in Google Sheets AND Microsoft Excel?",
+        faq_a1: "Yes. All formulas (<code>SUMIFS</code>, <code>INDEX/MATCH</code>, <code>COUNTIF</code>) use universal syntax with zero VBA macros. Open directly in Excel or upload to Google Drive &gt; Open with Google Sheets.",
+        faq_q2: "Can I change '$' to Euros (€), Pounds (£) or another currency?",
+        faq_a2: "Yes, in 5 seconds. Select the currency columns and use Format > Number > Currency (Google Sheets) or Ctrl+1 (Microsoft Excel).",
+        faq_q3: "Are both English and Spanish versions included?",
+        faq_a3: "Yes! Every .ZIP download contains standalone English and Spanish workbooks so you can use whichever language you prefer.",
+        faq_q4: "How do I clear the sample transactions?",
+        faq_a4: "Simply select and delete the sample input rows in the log tabs (leaving formula columns like Auto-Month or Net ($) untouched) and start entering your own numbers.",
+        footer_txt: "FinSheet Pro — Automated Excel & Google Sheets Templates • Instant Digital Delivery via Gumroad",
+        sub_pct: "% of income",
+        sub_save: "% saved every month",
+        mos_unit: "mos",
+        to_save: "To save ",
+        csv_hdr: "Category,Percentage,Monthly Amount",
+        csv_rows: ["Needs", "Wants", "Savings"],
+        csv_file: "my_50_30_20_budget_plan.csv"
+      },
+      es: {
+        nav_calc: "Calculadora 50/30/20 Gratis",
+        nav_tpl: "Plantillas",
+        nav_faq: "Preguntas",
+        nav_bundle: "Pack Completo (-30%)",
+        hero_pill: "Excel y Google Sheets • Ediciones Español + Inglés Incluidas",
+        hero_h1: "Deja de Pagar Suscripciones Mensuales Solo Para Controlar Tu Dinero.",
+        hero_p: "Plantillas automatizadas para finanzas personales, control quincenal mes a mes y contabilidad PyG para negocios—pagas una vez y son tuyas para siempre.",
+        hero_btn1: "Ver Todas las Plantillas",
+        hero_btn2: "Probar Calculadora Gratis ↓",
+        tb_1: "✔ <strong>Descarga .ZIP al Instante</strong> (ES + EN)",
+        tb_2: "✔ <strong>Cero Macros</strong> — Funciona en Excel y Google Sheets",
+        tb_3: "✔ <strong>Gráficos Nativos Vivos</strong> y Desplegables",
+        tb_4: "✔ <strong>Multimoneda Fácil</strong> ($, €, £)",
+        calc_h2: "Calculadora Gratuita de Presupuesto 50/30/20 y Meta de Ahorro",
+        calc_p: "Simula cuánto deberías destinar a gastos, gustos y ahorro al mes antes de elegir tu plantilla.",
+        lbl_inc: "Ingreso Mensual Neto ($)",
+        lbl_needs: "Necesidades (%) — Arriendo, Comida, Servicios",
+        lbl_wants: "Gustos / Ocio (%) — Salidas, Viajes, Compras",
+        lbl_goal: "Meta de Ahorro Objetivo ($)",
+        btn_csv: "Descargar Resumen (.CSV)",
+        kpi_needs: "Para Necesidades",
+        kpi_wants: "Para Gustos",
+        kpi_save: "Ahorro Mensual",
+        kpi_time: "Tiempo Para tu Meta",
+        split_lbl: "Distribución Actual",
+        calc_note: "¿Quieres registrar tus gastos diarios con gráficos automáticos, bola de nieve de deudas y recordatorios de pagos? Elige tu plantilla abajo.",
+        tpl_h2: "Elige Tu Sistema Automatizado en Excel y Google Sheets",
+        tpl_p: "Cada compra incluye el archivo en <strong>Español e Inglés (.XLSX)</strong> con datos de ejemplo para probar todos los gráficos al instante.",
+        buy_btn: "Comprar en Gumroad",
+        p1_tag: "Finanzas Personales • 5 Pestañas",
+        p1_title: "Dashboard de Finanzas Personales y Presupuesto Pro",
+        p1_desc: "Filtro interactivo por mes o año completo, +1,500 filas de movimientos, metas de ahorro, deudas y auditoría de suscripciones.",
+        p1_l1: "Cambia con 1 clic entre Todo el Año o cualquier mes",
+        p1_l2: "3 gráficos nativos en Excel + barras de progreso",
+        p1_l3: "1,500 filas con listas desplegables inteligentes",
+        p1_l4: "Incluye pestañas de Bola de Nieve y Suscripciones",
+        p2_tag: "Pestañas Mensuales • 14 Pestañas",
+        p2_title: "Planificador Mensual de Quincenas y Presupuesto (12 Meses)",
+        p2_desc: "¿Prefieres una hoja limpia por cada mes (ENE–DIC)? Controla quincenas, marca gastos fijos y sincroniza un Resumen Anual.",
+        p2_l1: "12 pestañas mensuales dedicadas (Enero a Diciembre)",
+        p2_l2: "Resumen Anual conectado + 2 gráficos anuales",
+        p2_l3: "Checklist de Pagos Fijos (Pagado / Pendiente)",
+        p2_l4: "Hasta 250 filas con desplegable + gráfico cada mes",
+        p3_tag: "Negocios y Freelance • 5 Pestañas",
+        p3_title: "Control de Negocio, Pymes y Freelancers (PyG)",
+        p3_desc: "Estado de Resultados real, comisiones Stripe/PayPal, gastos deducibles, facturas pendientes de clientes e impuestos Q1–Q4.",
+        p3_l1: "Estado PyG 12 meses: Ventas, Utilidad y Margen %",
+        p3_l2: "Control de cobros por cliente (Pagado / Pendiente / Vencido)",
+        p3_l3: "1,500 filas de ventas + 1,500 de gastos deducibles",
+        p3_l4: "Reserva automática de impuestos trimestrales",
+        bnd_badge: "MEJOR OFERTA — AHORRA MÁS DEL 30%",
+        bnd_title: "Mega Bundle Finanzas Personales + Negocios (Todo en Uno)",
+        bnd_desc: "Llévate los 3 sistemas completos de arriba (6 libros en total: ediciones en Español e Inglés) en una sola descarga. Paga una vez y ordena tanto tus finanzas como tu negocio.",
+        bnd_btn: "Obtener Mega Bundle →",
+        niche_h2: "Plantillas Especializadas por Nicho y Estudiantes",
+        niche_p: "Hojas de cálculo diseñadas específicamente para vendedores e-commerce, creadores de contenido, rentas/Airbnb y universitarios.",
+        p5_tag: "E-Commerce y Reventa • 4 Pestañas",
+        p5_title: "Control E-Commerce, Inventario SKU y Ganancias",
+        p5_desc: "Elige el SKU en tus pedidos y el costo unitario se busca solo (INDEX/MATCH)—compara márgenes entre Shopify, Amazon, MercadoLibre y Etsy.",
+        p5_l1: "Hasta 400 SKUs con alertas automáticas de Stock Bajo",
+        p5_l2: "1,500 pedidos descontando envíos y comisiones",
+        p5_l3: "Comparativa de rentabilidad por plataforma y mes",
+        p6_tag: "YouTubers, Streamers y UGC • 4 Pestañas",
+        p6_title: "Control de Ingresos y Patrocinios para Creadores",
+        p6_desc: "Une AdSense, Twitch, afiliados y tu pipeline de marcas (Negociando hasta Cobrado) mientras marcas cámaras y software como deducibles.",
+        p6_l1: "Pipeline CRM de patrocinios con fechas límite y tarifas",
+        p6_l2: "Reserva fiscal automática y ganancia real post-impuestos",
+        p6_l3: "Registro de 1,000 cobros y equipo de estudio deducible",
+        p7_tag: "Propietarios y Airbnb • 4 Pestañas",
+        p7_title: "Control de Flujo de Caja Inmobiliario, Rentas y Airbnb",
+        p7_desc: "Administra hasta 10 departamentos, alquileres fijos o Airbnb lado a lado—descuenta comisiones de plataforma y mide tu NOI anual.",
+        p7_l1: "Flujo neto, noches ocupadas y margen por cada unidad",
+        p7_l2: "1,000 rentas/reservas + 1,000 gastos deducibles",
+        p7_l3: "Gráfico anual de ingresos vs. gastos y desglose por rubro",
+        p8_tag: "Universidad y Colegio • 4 Pestañas",
+        p8_title: "Planificador Universitario: Notas, GPA y Presupuesto",
+        p8_desc: "Promedio ponderado escala 4.0, pesos de sílabo, cuenta regresiva automática de exámenes y control de gastos del semestre.",
+        p8_l1: "Hasta 10 materias comparando Nota Actual % vs. Meta %",
+        p8_l2: "Alerta de entregas urgentes (<= 7 días) + 600 tareas",
+        p8_l3: "Presupuesto de 500 gastos separando Esenciales vs. Ocio",
+        faq_h2: "Preguntas Frecuentes",
+        faq_q1: "¿Funciona en Google Sheets Y en Microsoft Excel?",
+        faq_a1: "Sí. Todas las fórmulas (<code>SUMIFS</code>, <code>INDEX/MATCH</code>, <code>COUNTIF</code>) usan sintaxis universal con cero macros VBA. Ábrelo directo en Excel o súbelo a Google Drive &gt; Abrir con Hojas de cálculo de Google.",
+        faq_q2: "¿Puedo cambiar el símbolo '$' a Euros (€) o mi moneda local?",
+        faq_a2: "Sí, en 5 segundos. Selecciona las columnas de dinero y cambia el formato a Moneda en Google Sheets o con Ctrl+1 en Excel.",
+        faq_q3: "¿Incluye tanto la versión en Español como en Inglés?",
+        faq_a3: "¡Sí! Cada archivo .ZIP trae los libros completos tanto en Español como en Inglés para que uses el que prefieras.",
+        faq_q4: "¿Cómo borro los datos de ejemplo para poner los míos?",
+        faq_a4: "Solo selecciona y borra las filas de entrada del ejemplo en las pestañas de registro (dejando intactas las columnas grises automáticas como Mes o Neto) y empieza a anotar los tuyos.",
+        footer_txt: "FinSheet Pro — Plantillas Automatizadas para Excel y Google Sheets • Entrega Digital Inmediata en Gumroad",
+        sub_pct: "% de tu ingreso",
+        sub_save: "% ahorrado cada mes",
+        mos_unit: "meses",
+        to_save: "Para ahorrar ",
+        csv_hdr: "Categoria,Porcentaje,Monto Mensual",
+        csv_rows: ["Necesidades", "Gustos", "Ahorros"],
+        csv_file: "mi_presupuesto_50_30_20.csv"
+      }
+    };
+
+    const qp = new URLSearchParams(window.location.search).get("lang");
+    let curLang = (qp === "es" || qp === "en") ? qp : ((navigator.language || "").toLowerCase().startsWith("es") ? "es" : "en");
+
     const elInc = document.getElementById("calc-income");
     const elNeeds = document.getElementById("calc-needs-pct");
     const elWants = document.getElementById("calc-wants-pct");
     const elGoal = document.getElementById("calc-goal");
+    const langBtn = document.getElementById("lang-toggle");
 
     function fmt(n) {
       return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
     function updateCalc() {
+      const t = I18N[curLang];
       const inc = Math.max(0, parseFloat(elInc.value) || 0);
       let nPct = Math.min(100, Math.max(0, parseFloat(elNeeds.value) || 0));
       let wPct = Math.min(100 - nPct, Math.max(0, parseFloat(elWants.value) || 0));
@@ -647,13 +856,13 @@
       const months = sAmt > 0 ? (goal / sAmt).toFixed(1) : "∞";
 
       document.getElementById("out-needs").textContent = fmt(nAmt);
-      document.getElementById("sub-needs").textContent = `${nPct}% of income`;
+      document.getElementById("sub-needs").textContent = `${nPct}${t.sub_pct}`;
       document.getElementById("out-wants").textContent = fmt(wAmt);
-      document.getElementById("sub-wants").textContent = `${wPct}% of income`;
+      document.getElementById("sub-wants").textContent = `${wPct}${t.sub_pct}`;
       document.getElementById("out-save").textContent = fmt(sAmt);
-      document.getElementById("sub-save").textContent = `${sPct}% saved every month`;
-      document.getElementById("out-months").textContent = months === "∞" ? "—" : `${months} mos`;
-      document.getElementById("sub-goal").textContent = `To save ${fmt(goal)}`;
+      document.getElementById("sub-save").textContent = `${sPct}${t.sub_save}`;
+      document.getElementById("out-months").textContent = months === "∞" ? "—" : `${months} ${t.mos_unit}`;
+      document.getElementById("sub-goal").textContent = `${t.to_save}${fmt(goal)}`;
       document.getElementById("out-split-label").textContent = `${nPct}% / ${wPct}% / ${sPct}%`;
 
       document.getElementById("bar-needs").style.width = `${nPct}%`;
@@ -661,20 +870,39 @@
       document.getElementById("bar-save").style.width = `${sPct}%`;
     }
 
+    function applyLang(lang) {
+      curLang = lang;
+      document.documentElement.lang = lang;
+      const t = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        if (t[k] !== undefined) el.textContent = t[k];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const k = el.getAttribute("data-i18n-html");
+        if (t[k] !== undefined) el.innerHTML = t[k];
+      });
+      document.querySelectorAll(".t-buy").forEach(el => { el.textContent = t.buy_btn; });
+      langBtn.textContent = lang === "es" ? "🇺🇸 EN" : "🇪🇸 ES";
+      updateCalc();
+    }
+
+    langBtn.addEventListener("click", () => applyLang(curLang === "es" ? "en" : "es"));
     [elInc, elNeeds, elWants, elGoal].forEach(el => el.addEventListener("input", updateCalc));
-    updateCalc();
+    applyLang(curLang);
 
     document.getElementById("btn-export-csv").addEventListener("click", () => {
+      const t = I18N[curLang];
       const csv = [
-        "Category,Percentage,Monthly Amount",
-        `Needs,${elNeeds.value}%,${document.getElementById("out-needs").textContent.replace(/,/g, "")}`,
-        `Wants,${elWants.value}%,${document.getElementById("out-wants").textContent.replace(/,/g, "")}`,
-        `Savings,${Math.max(0, 100 - (+elNeeds.value) - (+elWants.value))}%,${document.getElementById("out-save").textContent.replace(/,/g, "")}`
+        t.csv_hdr,
+        `${t.csv_rows[0]},${elNeeds.value}%,${document.getElementById("out-needs").textContent.replace(/,/g, "")}`,
+        `${t.csv_rows[1]},${elWants.value}%,${document.getElementById("out-wants").textContent.replace(/,/g, "")}`,
+        `${t.csv_rows[2]},${Math.max(0, 100 - (+elNeeds.value) - (+elWants.value))}%,${document.getElementById("out-save").textContent.replace(/,/g, "")}`
       ].join("\n");
       const blob = new Blob([csv], { type: "text/csv" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "my_50_30_20_budget_plan.csv";
+      a.download = t.csv_file;
       a.click();
     });
   </script>
